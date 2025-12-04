@@ -38,7 +38,8 @@ app.use(express.json());
 const CONFIG = {
     NFT_COLLECTION_ID: "0.0.10162863",
     TREASURY_ACCOUNT: process.env.HEDERA_ACCOUNT_ID || "0.0.10154386",
-    IPFS_CID: "bafybeidtyn3pwobcogewfw3o3mlqz2k3fyqkzih7flo5ppxy2z7p2steoa",
+    IPFS_IMAGES: "bafybeifi5n34rqrecp6t6qpbgr7ekblnp23dgb66kk7327q3cwbask2cee",
+    IPFS_METADATA_EVOLUTIONS: "bafybeigxvxoutk6mxxl2iq4xucsgkzkn3mhswxufdo5pvbpoo2hfu7f4ui",
     PORT: process.env.PORT || 3002
 };
 
@@ -48,15 +49,15 @@ const POKEMON_DATA = [
         serial: 17, 
         name: "Pichu", 
         evolvesTo: "Pikachu",
-        evolveMetadata: "2-pikachu.json",
-        cost: 5,
+        evolveMetadata: "9-pikachu.json",
+        cost: 5, // HBAR
         location: "Shibuya Crossing"
     },
     { 
         serial: 18, 
         name: "Charmander", 
         evolvesTo: "Charizard",
-        evolveMetadata: "4-charizard.json",
+        evolveMetadata: "10-charizard.json",
         cost: 10,
         location: "Tokyo Tower"
     },
@@ -64,7 +65,7 @@ const POKEMON_DATA = [
         serial: 19, 
         name: "Squirtle", 
         evolvesTo: "Blastoise",
-        evolveMetadata: "6-blastoise.json",
+        evolveMetadata: "11-blastoise.json",
         cost: 10,
         location: "Ueno Park Lake"
     },
@@ -72,7 +73,7 @@ const POKEMON_DATA = [
         serial: 20, 
         name: "Bulbasaur", 
         evolvesTo: "Venusaur",
-        evolveMetadata: "8-venusaur.json",
+        evolveMetadata: "12-venusaur.json",
         cost: 10,
         location: "Shinjuku Gyoen"
     },
@@ -80,7 +81,7 @@ const POKEMON_DATA = [
         serial: 21, 
         name: "Mew", 
         evolvesTo: "Mewtwo",
-        evolveMetadata: "10-mewtwo.json",
+        evolveMetadata: "13-mewtwo.json",
         cost: 50,
         location: "Akihabara"
     },
@@ -88,7 +89,7 @@ const POKEMON_DATA = [
         serial: 22, 
         name: "Dratini", 
         evolvesTo: "Dragonite",
-        evolveMetadata: "12-dragonite.json",
+        evolveMetadata: "14-dragonite.json",
         cost: 30,
         location: "Senso-ji Temple"
     },
@@ -96,7 +97,7 @@ const POKEMON_DATA = [
         serial: 23, 
         name: "Munchlax", 
         evolvesTo: "Snorlax",
-        evolveMetadata: "14-snorlax.json",
+        evolveMetadata: "15-snorlax.json",
         cost: 8,
         location: "Yoyogi Park"
     },
@@ -482,7 +483,7 @@ async function transferNFT(toAccount, serial) {
 
 async function mintEvolved(pokemon) {
     try {
-        const metadata = `ipfs://${CONFIG.IPFS_CID}/${pokemon.evolveMetadata}`;
+        const metadata = `ipfs://${CONFIG.IPFS_METADATA_EVOLUTIONS}/${pokemon.evolveMetadata}`;
         
         const mintTx = await new TokenMintTransaction()
             .setTokenId(CONFIG.NFT_COLLECTION_ID)
