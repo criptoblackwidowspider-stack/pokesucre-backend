@@ -45,15 +45,15 @@ const CONFIG = {
 // Datos de Pokémon con precios en HBAR
 const POKEMON_DATA = [
     { 
-        serial: 1, 
+        serial: 17, 
         name: "Pichu", 
         evolvesTo: "Pikachu",
         evolveMetadata: "2-pikachu.json",
-        cost: 5, // HBAR
+        cost: 5,
         location: "Shibuya Crossing"
     },
     { 
-        serial: 2, 
+        serial: 18, 
         name: "Charmander", 
         evolvesTo: "Charizard",
         evolveMetadata: "4-charizard.json",
@@ -61,7 +61,7 @@ const POKEMON_DATA = [
         location: "Tokyo Tower"
     },
     { 
-        serial: 3, 
+        serial: 19, 
         name: "Squirtle", 
         evolvesTo: "Blastoise",
         evolveMetadata: "6-blastoise.json",
@@ -69,7 +69,7 @@ const POKEMON_DATA = [
         location: "Ueno Park Lake"
     },
     { 
-        serial: 4, 
+        serial: 20, 
         name: "Bulbasaur", 
         evolvesTo: "Venusaur",
         evolveMetadata: "8-venusaur.json",
@@ -77,7 +77,7 @@ const POKEMON_DATA = [
         location: "Shinjuku Gyoen"
     },
     { 
-        serial: 5, 
+        serial: 21, 
         name: "Mew", 
         evolvesTo: "Mewtwo",
         evolveMetadata: "10-mewtwo.json",
@@ -85,7 +85,7 @@ const POKEMON_DATA = [
         location: "Akihabara"
     },
     { 
-        serial: 6, 
+        serial: 22, 
         name: "Dratini", 
         evolvesTo: "Dragonite",
         evolveMetadata: "12-dragonite.json",
@@ -93,7 +93,7 @@ const POKEMON_DATA = [
         location: "Senso-ji Temple"
     },
     { 
-        serial: 7, 
+        serial: 23, 
         name: "Munchlax", 
         evolvesTo: "Snorlax",
         evolveMetadata: "14-snorlax.json",
@@ -101,7 +101,7 @@ const POKEMON_DATA = [
         location: "Yoyogi Park"
     },
     { 
-        serial: 8, 
+        serial: 24, 
         name: "Gastly", 
         evolvesTo: "Gengar",
         evolveMetadata: "16-gengar.json",
